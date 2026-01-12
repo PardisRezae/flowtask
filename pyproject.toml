@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flowtask"
+version = "0.1.0"
+description = "A dependency-aware task manager CLI (Python + SQLite)."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Pardis Rezaeifar"}]
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5.0"]
+
+[project.scripts]
+flowtask = "flowtask.cli:main"
+
+[tool.setuptools]
+packages = ["flowtask"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
